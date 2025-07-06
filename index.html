@@ -4,220 +4,310 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>PingFrame, Inc.</title>
+  <link href="https://fonts.googleapis.com/css?family=Inter:400,600,700&display=swap" rel="stylesheet">
   <style>
-  body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background-color: #f4f6f8;
-    color: #333;
-  }
-
-  .navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #ffffff;
-    padding: 16px 32px;
-    border-bottom: 1px solid #e1e4e8;
-  }
-
-  .nav-left {
-    display: flex;
-    align-items: center;
-    gap: 24px;
-  }
-
-  .nav-left img {
-    width: 100px;
-    height: auto;
-  }
-
-  .nav-right {
-    display: flex;
-    gap: 24px;
-    align-items: center;
-  }
-
-  .nav-item {
-    position: relative;
-  }
-
-  .nav-link {
-    text-decoration: none;
-    color: #333;
-    font-weight: 500;
-    cursor: pointer;
-    transition: color 0.3s;
-  }
-
-  .nav-link:hover {
-    color: #007bff;
-  }
-
-  .nav-item:hover .dropdown {
-    display: block;
-  }
-
-  .dropdown {
-    display: none;
-    position: absolute;
-    background-color: white;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-    padding: 12px;
-    top: 100%;
-    left: 0;
-    z-index: 100;
-  }
-
-  .dropdown a {
-    display: block;
-    padding: 8px 12px;
-    text-decoration: none;
-    color: #333;
-    transition: background-color 0.2s;
-  }
-
-  .dropdown a:hover {
-    background-color: #f0f0f0;
-  }
-
-  .btn {
-    background-color: #007bff;
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 6px;
-    text-decoration: none;
-    font-size: 0.95rem;
-    transition: background-color 0.2s;
-  }
-
-  .btn:hover {
-    background-color: #0056b3;
-  }
-
-  header {
-    text-align: center;
-    padding: 60px 20px 40px;
-  }
-
-  h1 {
-    font-size: 2.5rem;
-    margin-bottom: 20px;
-  }
-
-  p {
-    font-size: 1.2rem;
-    margin: 0 auto 30px;
-    max-width: 600px;
-  }
-
-  section {
-    padding: 40px 20px;
-    text-align: center;
-  }
-
-  section h2 {
-    font-size: 1.8rem;
-    margin-bottom: 20px;
-  }
-
-  ul {
-    list-style: none;
-    padding: 0;
-    max-width: 600px;
-    margin: 0 auto;
-    text-align: left;
-  }
-
-  li {
-    margin: 15px 0;
-    font-size: 1.1rem;
-  }
-
-  footer {
-    background: #fff;
-    padding: 20px;
-    border-top: 1px solid #e1e4e8;
-    text-align: center;
-    font-size: 0.9rem;
-  }
-
-  @media (max-width: 768px) {
+    body {
+      font-family: 'Inter', Arial, sans-serif;
+      background: #f7f9fa;
+      color: #253858;
+      margin: 0;
+      padding: 0;
+    }
     .navbar {
-      flex-direction: column;
-      align-items: flex-start;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 18px 40px;
+      box-shadow: 0 2px 8px rgba(9,30,66,0.03);
     }
-    .nav-right {
-      flex-direction: column;
-      align-items: flex-start;
-      gap: 12px;
-      width: 100%;
+    .navbar .logo {
+      height: 40px;
     }
-  }
-</style>
+    .nav-menu {
+      display: flex;
+      gap: 32px;
+      align-items: center;
+      flex: 1;
+      justify-content: center;
+    }
+    .nav-link {
+      font-weight: 600;
+      text-decoration: none;
+      color: #253858;
+      padding: 8px 12px;
+      border-radius: 4px;
+      transition: background 0.2s;
+    }
+    .nav-link:hover {
+      background: #f4f5f7;
+      color: #0052cc;
+    }
+    .cta-btn {
+      background: linear-gradient(90deg, #0052cc 0%, #2684ff 100%);
+      color: #fff;
+      border: none;
+      border-radius: 6px;
+      padding: 10px 22px;
+      font-size: 1rem;
+      font-weight: 600;
+      margin-left: 16px;
+      text-decoration: none;
+      box-shadow: 0 2px 8px rgba(38,132,255,0.07);
+      transition: background 0.2s;
+    }
+    .cta-btn:hover {
+      background: linear-gradient(90deg, #0747a6 0%, #0052cc 100%);
+    }
 
+    /* HERO SECTION */
+    .hero {
+      background: linear-gradient(90deg, #2684ff 0%, #0052cc 100%);
+      color: #fff;
+      padding: 90px 0 70px 0;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero h1 {
+      font-size: 2.7rem;
+      font-weight: 700;
+      margin-bottom: 22px;
+      line-height: 1.15;
+    }
+    .hero p {
+      font-size: 1.25rem;
+      margin-bottom: 38px;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .hero-cta {
+      background: #fff;
+      color: #0052cc;
+      font-weight: 600;
+      border-radius: 6px;
+      padding: 12px 30px;
+      text-decoration: none;
+      font-size: 1.1rem;
+      box-shadow: 0 2px 8px rgba(38,132,255,0.13);
+      transition: background 0.2s, color 0.2s;
+    }
+    .hero-cta:hover {
+      background: #e6f0ff;
+      color: #0747a6;
+    }
+    .hero-img {
+      margin-top: 40px;
+      max-width: 340px;
+      width: 90vw;
+      border-radius: 18px;
+      box-shadow: 0 8px 32px rgba(9,30,66,0.13);
+    }
+
+    /* FEATURES */
+    .section {
+      padding: 70px 0 50px 0;
+      background: #fff;
+      text-align: center;
+    }
+    .section.alt {
+      background: #f4f8fb;
+    }
+    .features-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 40px;
+      margin-top: 38px;
+    }
+    .feature {
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 2px 8px rgba(9,30,66,0.06);
+      padding: 30px 24px;
+      max-width: 320px;
+      text-align: left;
+      flex: 1 1 280px;
+    }
+    .feature-icon {
+      font-size: 2.6rem;
+      margin-bottom: 18px;
+      color: #0052cc;
+    }
+    .feature-title {
+      font-size: 1.2rem;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+    .feature-desc {
+      font-size: 1rem;
+      color: #42526e;
+    }
+
+    /* TRUSTED BY */
+    .trusted {
+      padding: 30px 0 10px 0;
+      background: #fff;
+      text-align: center;
+    }
+    .trusted-logos {
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      margin-top: 16px;
+      flex-wrap: wrap;
+    }
+    .trusted-logos img {
+      height: 36px;
+      opacity: 0.7;
+    }
+
+    /* FOOTER */
+    footer {
+      background: #091e42;
+      color: #fff;
+      padding: 40px 0 20px 0;
+    }
+    .footer-content {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 50px;
+      max-width: 1100px;
+      margin: 0 auto 30px auto;
+    }
+    .footer-col {
+      min-width: 180px;
+    }
+    .footer-col h4 {
+      font-size: 1.05rem;
+      font-weight: 700;
+      margin-bottom: 18px;
+    }
+    .footer-col a {
+      color: #b3bac5;
+      text-decoration: none;
+      display: block;
+      margin-bottom: 10px;
+      font-size: 0.98rem;
+      transition: color 0.2s;
+    }
+    .footer-col a:hover {
+      color: #fff;
+    }
+    .footer-bottom {
+      text-align: center;
+      color: #b3bac5;
+      font-size: 0.95rem;
+    }
+    @media (max-width: 900px) {
+      .features-grid {
+        flex-direction: column;
+        align-items: center;
+      }
+      .footer-content {
+        flex-direction: column;
+        align-items: center;
+        gap: 28px;
+      }
+    }
+  </style>
 </head>
 <body>
-
   <!-- NAVIGATION -->
-  <div class="navbar">
-    <div class="nav-left">
-      <img src="assets/img/GPT3.png" alt="PingFrame Logo" />
-      
-      <div class="nav-item">
-        <span class="nav-link">Products ▾</span>
-        <div class="dropdown">
-          <a href="#">PingFrame Sheets</a>
-          <a href="#">PingFrame Analytics</a>
-        </div>
-      </div>
-          <a href="#" class="nav-link">Partners</a>
-      
-      <div class="nav-item">
-        <span class="nav-link">Company ▾</span>
-        <div class="dropdown">
-          <a href="#">About</a>
-          <a href="#">Careers</a>
-          <a href="#">Contact</a>
-        </div>
-      </div>
+  <nav class="navbar">
+    <img src="assets/img/GPT3.png" alt="PingFrame Logo" class="logo" />
+    <div class="nav-menu">
+      <a href="#" class="nav-link">Products</a>
+      <a href="#" class="nav-link">Solutions</a>
+      <a href="#" class="nav-link">Resources</a>
+      <a href="#" class="nav-link">Pricing</a>
     </div>
-
-    <div class="nav-right">
-      <a href="https://docs.google.com/forms/d/e/1FAIpQLSdWczLkiWUv1JCdNLImhXUbEo6lkWClddcbidI-K-5qIpGz9g/viewform?usp=preview" class="btn">Join the Beta</a>
+    <div>
+      <a href="https://docs.google.com/forms/d/e/1FAIpQLSdWczLkiWUv1JCdNLImhXUbEo6lkWClddcbidI-K-5qIpGz9g/viewform?usp=preview" class="cta-btn">Join the Beta</a>
     </div>
-  </div>
+  </nav>
 
   <!-- HERO SECTION -->
-  <header>
+  <section class="hero">
     <h1>Get Notified When It Matters</h1>
-    <p>PingFrame connects apps like Google Sheets and Google Analytics to Slack or Microsoft Teams — so your team gets real-time alerts the moment data changes.</p>
-  </header>
-
-  <!-- IMAGE EXAMPLE -->
-  <section>
-    <img src="assets/img/GPT1.png" alt="PingFrame Example" style="width: 200px;" />
+    <p>Connect Google Sheets and Analytics to Slack or Teams. Instantly alert your team the moment data changes — without writing a single line of code.</p>
+    <a href="https://docs.google.com/forms/d/e/1FAIpQLSdWczLkiWUv1JCdNLImhXUbEo6lkWClddcbidI-K-5qIpGz9g/viewform?usp=preview" class="hero-cta">Request Access</a>
+    <div>
+      <img src="assets/img/GPT1.png" alt="PingFrame Example" class="hero-img" />
+    </div>
   </section>
 
-  <!-- FEATURES SECTION -->
-  <section>
-    <h2>How It Works</h2>
-    <ul>
-      <li><strong>Track Updates:</strong> Monitor key cells, rows, or entire spreadsheets.</li>
-      <li><strong>Instant Alerts:</strong> Send customizable notifications to Slack or Teams.</li>
-      <li><strong>No-Code Setup:</strong> Works with Google Sheets, no coding required.</li>
-    </ul>
+  <!-- FEATURES -->
+  <section class="section">
+    <h2>How PingFrame Works</h2>
+    <div class="features-grid">
+      <div class="feature">
+        <div class="feature-icon">📊</div>
+        <div class="feature-title">Track Updates</div>
+        <div class="feature-desc">Monitor key cells, rows, or entire spreadsheets for important changes in real time.</div>
+      </div>
+      <div class="feature">
+        <div class="feature-icon">⚡️</div>
+        <div class="feature-title">Instant Alerts</div>
+        <div class="feature-desc">Send customizable notifications directly to Slack or Teams channels.</div>
+      </div>
+      <div class="feature">
+        <div class="feature-icon">🛠️</div>
+        <div class="feature-title">No-Code Setup</div>
+        <div class="feature-desc">Connect with Google Sheets — no coding or technical setup required.</div>
+      </div>
+    </div>
   </section>
 
-  <section>
+  <!-- TRUSTED BY -->
+  <section class="trusted alt">
+    <div>Trusted by teams at</div>
+    <div class="trusted-logos">
+      <img src="assets/img/logo1.png" alt="Company 1"/>
+      <img src="assets/img/logo2.png" alt="Company 2"/>
+      <!-- Add more logos as needed -->
+    </div>
+  </section>
+
+  <!-- BENEFITS SECTION -->
+  <section class="section alt">
     <h2>Built for Fast-Moving Teams</h2>
-    <p>Whether you're tracking inventory, marketing budgets, or project statuses — PingFrame makes sure your team is always in the loop without constantly checking spreadsheets.</p>
+    <p>Stop constantly checking spreadsheets. Stay on top of inventory, budgets, or project statuses — PingFrame keeps your team in the loop, automatically.</p>
   </section>
 
+  <!-- FOOTER -->
   <footer>
-    <p>© 2025 PingFrame, Inc. • <a href="mailto:hello@pingframe-inc.com">Contact Us</a></p>
+    <div class="footer-content">
+      <div class="footer-col">
+        <h4>Products</h4>
+        <a href="#">Sheets Connector</a>
+        <a href="#">Analytics Alerts</a>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <a href="#">About</a>
+        <a href="#">Careers</a>
+        <a href="#">Contact</a>
+      </div>
+      <div class="footer-col">
+        <h4>Resources</h4>
+        <a href="#">Help Center</a>
+        <a href="#">Blog</a>
+      </div>
+      <div class="footer-col">
+        <h4>Connect</h4>
+        <a href="mailto:hello@pingframe-inc.com">Email</a>
+        <a href="#">Twitter</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      © 2025 PingFrame, Inc.
+    </div>
   </footer>
-
 </body>
 </html>
