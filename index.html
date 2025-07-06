@@ -4,401 +4,236 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>PingFrame, Inc.</title>
-  <link href="https://fonts.googleapis.com/css?family=Inter:400,600,700&display=swap" rel="stylesheet">
-  <link rel="icon" type="image/png" href="assets/img/GPT3.png" />
   <style>
-    :root {
-      --alert-red: #e53935;
-      --success-green: #43a047;
-      --slack-green: #36c5f0;
-      --white: #fff;
-      --navbar-bg: #fff;
-      --dropdown-bg: #fff;
-      --bg-main: #fff;
-      --bg-section: #f7f9fa;
-      --text-main: #222;
-      --text-light: #fff;
-      --shadow: 0 2px 8px rgba(0,0,0,0.04);
-    }
-    body {
-      font-family: 'Inter', Arial, sans-serif;
-      background: var(--bg-section);
-      color: var(--text-main);
-      margin: 0;
-      padding: 0;
-    }
+  body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f4f6f8;
+    color: #333;
+  }
+
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #fff;
+    padding: 16px 32px;
+    border-bottom: 1px solid #e1e4e8;
+  }
+
+  .nav-left {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+  }
+
+  .nav-left img {
+    width: 100px;
+    height: auto;
+  }
+
+  .nav-right {
+    display: flex;
+    gap: 24px;
+    align-items: center;
+  }
+
+  .nav-item {
+    position: relative;
+  }
+
+  .nav-link {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    cursor: pointer;
+    transition: color 0.3s;
+  }
+
+  .nav-link:hover {
+    color: #e53935;
+  }
+
+  .nav-item:hover .dropdown {
+    display: block;
+  }
+
+  .dropdown {
+    display: none;
+    position: absolute;
+    background-color: #fff;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    padding: 12px;
+    top: 100%;
+    left: 0;
+    z-index: 100;
+  }
+
+  .dropdown a {
+    display: block;
+    padding: 8px 12px;
+    text-decoration: none;
+    color: #333;
+    transition: background-color 0.2s;
+  }
+
+  .dropdown a:hover {
+    background-color: #e8f5e9;
+    color: #43a047;
+  }
+
+  .btn {
+    background-color: #e53935;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 6px;
+    text-decoration: none;
+    font-size: 0.95rem;
+    transition: background-color 0.2s;
+  }
+
+  .btn:hover {
+    background-color: #43a047;
+  }
+
+  header {
+    text-align: center;
+    padding: 60px 20px 40px;
+    background: linear-gradient(90deg, #e53935 0%, #43a047 100%);
+    color: #fff;
+  }
+
+  h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+  }
+
+  p {
+    font-size: 1.2rem;
+    margin: 0 auto 30px;
+    max-width: 600px;
+  }
+
+  section {
+    padding: 40px 20px;
+    text-align: center;
+    background-color: #fff;
+  }
+
+  section h2 {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    color: #e53935;
+  }
+
+  ul {
+    list-style: none;
+    padding: 0;
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: left;
+  }
+
+  li {
+    margin: 15px 0;
+    font-size: 1.1rem;
+    color: #333;
+  }
+
+  .feature-green {
+    color: #43a047;
+    font-weight: bold;
+  }
+
+  .feature-red {
+    color: #e53935;
+    font-weight: bold;
+  }
+
+  footer {
+    background: #fff;
+    padding: 20px;
+    border-top: 1px solid #e1e4e8;
+    text-align: center;
+    font-size: 0.9rem;
+  }
+
+  @media (max-width: 768px) {
     .navbar {
-      position: sticky;
-      top: 0; z-index: 1000;
-      background: var(--navbar-bg);
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 18px 40px;
-      box-shadow: var(--shadow);
+      flex-direction: column;
+      align-items: flex-start;
     }
-    .logo-img {
-      width: 44px;
-      height: 44px;
-      margin-right: 16px;
-      vertical-align: middle;
+    .nav-right {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 12px;
+      width: 100%;
     }
-    .brandname {
-      font-size: 1.3rem;
-      font-weight: 700;
-      color: var(--alert-red);
-      letter-spacing: -1px;
-      vertical-align: middle;
-      margin-right: 18px;
-      font-family: 'Inter', Arial, sans-serif;
-    }
-    .nav-menu {
-      display: flex;
-      gap: 24px;
-      align-items: center;
-      flex: 1;
-      justify-content: center;
-    }
-    .nav-link {
-      font-weight: 600;
-      text-decoration: none;
-      color: var(--text-main);
-      padding: 8px 12px;
-      border-radius: 4px;
-      transition: background 0.2s, color 0.2s;
-      position: relative;
-      cursor: pointer;
-    }
-    .nav-link:hover {
-      background: #ffeaea;
-      color: var(--alert-red);
-    }
-    .nav-item {
-      position: relative;
-      display: inline-block;
-    }
-    .dropdown {
-      display: none;
-      position: absolute;
-      top: 120%;
-      left: 0;
-      min-width: 270px;
-      background: var(--dropdown-bg);
-      box-shadow: 0 4px 24px rgba(0,0,0,0.09);
-      border-radius: 10px;
-      z-index: 999;
-      padding: 12px 0;
-    }
-    .nav-item:hover .dropdown,
-    .nav-item:focus-within .dropdown {
-      display: block;
-    }
-    .dropdown-link {
-      display: block;
-      padding: 14px 24px 10px 24px;
-      text-decoration: none;
-      color: var(--text-main);
-      font-weight: 500;
-      border-left: 6px solid transparent;
-      transition: background 0.2s, border-color 0.2s;
-      margin-bottom: 4px;
-    }
-    .dropdown-link .desc {
-      display: block;
-      font-size: 0.97rem;
-      color: #555;
-      font-weight: 400;
-      margin-top: 3px;
-    }
-    .dropdown-link:hover {
-      background: #f4f6f8;
-      border-left: 6px solid var(--success-green);
-      color: var(--success-green);
-    }
-    .cta-btn {
-      background: linear-gradient(90deg, var(--alert-red) 0%, var(--success-green) 100%);
-      color: var(--white);
-      border: none;
-      border-radius: 6px;
-      padding: 10px 22px;
-      font-size: 1rem;
-      font-weight: 700;
-      margin-left: 16px;
-      text-decoration: none;
-      box-shadow: 0 2px 8px rgba(229,57,53,0.09);
-      transition: background 0.2s;
-      cursor: pointer;
-    }
-    .cta-btn:hover {
-      background: linear-gradient(90deg, #b71c1c 0%, #388e3c 100%);
-    }
-    .hero {
-      background: linear-gradient(90deg, var(--alert-red) 0%, var(--success-green) 100%);
-      color: var(--text-light);
-      padding: 90px 0 70px 0;
-      text-align: center;
-      position: relative;
-      overflow: hidden;
-    }
-    .hero h1 {
-      font-size: 2.5rem;
-      font-weight: 700;
-      margin-bottom: 22px;
-      line-height: 1.13;
-      letter-spacing: -1px;
-    }
-    .hero p {
-      font-size: 1.18rem;
-      margin-bottom: 38px;
-      max-width: 650px;
-      margin-left: auto;
-      margin-right: auto;
-      color: #fff;
-    }
-    .hero-cta {
-      background: var(--white);
-      color: var(--alert-red);
-      font-weight: 700;
-      border-radius: 6px;
-      padding: 12px 32px;
-      text-decoration: none;
-      font-size: 1.1rem;
-      box-shadow: 0 2px 8px rgba(229,57,53,0.13);
-      transition: background 0.2s, color 0.2s;
-      border: none;
-      cursor: pointer;
-    }
-    .hero-cta:hover {
-      background: #ffeaea;
-      color: var(--success-green);
-    }
-    .hero-img {
-      margin-top: 40px;
-      max-width: 340px;
-      width: 90vw;
-      border-radius: 18px;
-      box-shadow: 0 8px 32px rgba(9,30,66,0.13);
-      border: 2px solid #fff;
-    }
-    .announce {
-      background: var(--bg-main);
-      color: var(--alert-red);
-      text-align: center;
-      font-size: 1.09rem;
-      padding: 26px 0 10px 0;
-      font-weight: 700;
-      letter-spacing: 0.5px;
-    }
-    .section {
-      padding: 70px 0 50px 0;
-      background: var(--bg-main);
-      text-align: center;
-    }
-    .section.alt {
-      background: #f2fffa;
-    }
-    .features-grid {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 40px;
-      margin-top: 38px;
-    }
-    .feature {
-      background: #fff;
-      border-radius: 12px;
-      box-shadow: 0 2px 8px rgba(9,30,66,0.06);
-      padding: 30px 24px;
-      max-width: 320px;
-      text-align: left;
-      flex: 1 1 280px;
-      border-top: 6px solid var(--success-green);
-      min-width: 210px;
-    }
-    .feature-icon {
-      font-size: 2rem;
-      margin-bottom: 18px;
-      color: var(--alert-red);
-      display: block;
-    }
-    .feature-title {
-      font-size: 1.2rem;
-      font-weight: 700;
-      margin-bottom: 8px;
-    }
-    .feature-desc {
-      font-size: 1rem;
-      color: #42526e;
-    }
-    footer {
-      background: #222;
-      color: #fff;
-      padding: 36px 0 16px 0;
-    }
-    .footer-content {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 50px;
-      max-width: 1100px;
-      margin: 0 auto 30px auto;
-    }
-    .footer-col {
-      min-width: 180px;
-    }
-    .footer-col h4 {
-      font-size: 1.05rem;
-      font-weight: 700;
-      margin-bottom: 18px;
-      color: #fff;
-    }
-    .footer-col a {
-      color: #eee;
-      text-decoration: none;
-      display: block;
-      margin-bottom: 10px;
-      font-size: 0.98rem;
-      transition: color 0.2s;
-    }
-    .footer-col a:hover {
-      color: var(--alert-red);
-    }
-    .footer-bottom {
-      text-align: center;
-      color: #b3bac5;
-      font-size: 0.95rem;
-    }
-    @media (max-width: 900px) {
-      .features-grid {
-        flex-direction: column;
-        align-items: center;
-      }
-      .footer-content {
-        flex-direction: column;
-        align-items: center;
-        gap: 28px;
-      }
-      .navbar {
-        flex-direction: column;
-        align-items: flex-start;
-        padding: 18px 16px;
-      }
-      .nav-menu {
-        flex-direction: column;
-        gap: 12px;
-        align-items: flex-start;
-      }
-    }
-  </style>
+  }
+</style>
+
 </head>
 <body>
+
   <!-- NAVIGATION -->
-  <nav class="navbar">
-    <span>
-      <img src="assets/img/GPT3.png" alt="PingFrame Logo" class="logo-img" />
-      <span class="brandname">PingFrame</span>
-    </span>
-    <div class="nav-menu">
+  <div class="navbar">
+    <div class="nav-left">
+      <img src="assets/img/GPT3.png" alt="PingFrame Logo" />
+      
       <div class="nav-item">
         <span class="nav-link">Products ▾</span>
         <div class="dropdown">
-          <a href="#" class="dropdown-link">
-            PingFrame Sheets
-            <span class="desc">Sheets Connector — Instantly sync and monitor your spreadsheets.</span>
-          </a>
-          <a href="#" class="dropdown-link">
-            PingFrame Analytics
-            <span class="desc">Analytics Alert — Real-time insights and notifications from Analytics.</span>
-          </a>
+          <a href="#">PingFrame Sheets</a>
+          <a href="#">PingFrame Analytics</a>
         </div>
       </div>
-      <a href="#" class="nav-link">About Us</a>
       <a href="#" class="nav-link">Partners</a>
+      
       <div class="nav-item">
         <span class="nav-link">Company ▾</span>
         <div class="dropdown">
-          <a href="#" class="dropdown-link">About</a>
-          <a href="#" class="dropdown-link">Careers</a>
-          <a href="#" class="dropdown-link">Contact</a>
+          <a href="#">About</a>
+          <a href="#">Careers</a>
+          <a href="#">Contact</a>
         </div>
       </div>
     </div>
-    <div>
-      <a href="#" class="cta-btn">Try Now For Free</a>
-    </div>
-  </nav>
 
-  <!-- HERO SECTION -->
-  <section class="hero">
-    <h1>Get Notified When It Matters</h1>
-    <p>PingFrame connects apps like Google Sheets and Google Analytics to Slack or Microsoft Teams — so your team gets real-time alerts the moment data changes.</p>
-    <a href="#" class="hero-cta">Try Now For Free</a>
-    <div>
-      <img src="assets/img/GPT1.png" alt="PingFrame Example" class="hero-img" />
+    <div class="nav-right">
+      <a href="#" class="btn">Try Now For Free</a>
     </div>
-  </section>
-
-  <!-- ANNOUNCEMENT SECTION -->
-  <div class="announce">
-    <p>Instantly alert your team the moment data changes!</p>
   </div>
 
-  <!-- FEATURES -->
-  <section class="section">
-    <h2>How PingFrame Works</h2>
-    <div class="features-grid">
-      <div class="feature">
-        <span class="feature-icon">📊</span>
-        <div class="feature-title">Track Updates</div>
-        <div class="feature-desc">Monitor key cells, rows, or entire spreadsheets for important changes in real time.</div>
-      </div>
-      <div class="feature">
-        <span class="feature-icon">⚡️</span>
-        <div class="feature-title">Instant Alerts</div>
-        <div class="feature-desc">Send customizable notifications directly to Slack or Teams channels.</div>
-      </div>
-      <div class="feature">
-        <span class="feature-icon">🛠️</span>
-        <div class="feature-title">No-Code Setup</div>
-        <div class="feature-desc">Connect with Google Sheets — no coding or technical setup required.</div>
-      </div>
-    </div>
+  <!-- HERO SECTION -->
+  <header>
+    <h1>Get Notified When It Matters</h1>
+    <p>PingFrame connects apps like Google Sheets and Google Analytics to Slack or Microsoft Teams — so your team gets real-time alerts the moment data changes.</p>
+  </header>
+
+  <!-- IMAGE EXAMPLE -->
+  <section>
+    <img src="assets/img/GPT1.png" alt="PingFrame Example" style="width: 200px;" />
   </section>
 
-  <!-- BENEFITS SECTION -->
-  <section class="section alt">
+  <!-- FEATURES SECTION -->
+  <section>
+    <h2>How It Works</h2>
+    <ul>
+      <li><span class="feature-green">Track Updates:</span> Monitor key cells, rows, or entire spreadsheets.</li>
+      <li><span class="feature-red">Instant Alerts:</span> Send customizable notifications to Slack or Teams.</li>
+      <li><span class="feature-green">No-Code Setup:</span> Works with Google Sheets, no coding required.</li>
+    </ul>
+  </section>
+
+  <section>
     <h2>Built for Fast-Moving Teams</h2>
     <p>Whether you're tracking inventory, marketing budgets, or project statuses — PingFrame makes sure your team is always in the loop without constantly checking spreadsheets.</p>
   </section>
 
-  <!-- FOOTER -->
   <footer>
-    <div class="footer-content">
-      <div class="footer-col">
-        <h4>Products</h4>
-        <a href="#">Sheets Connector</a>
-        <a href="#">Analytics Alerts</a>
-      </div>
-      <div class="footer-col">
-        <h4>Company</h4>
-        <a href="#">About</a>
-        <a href="#">Careers</a>
-        <a href="#">Contact</a>
-      </div>
-      <div class="footer-col">
-        <h4>Resources</h4>
-        <a href="#">Help Center</a>
-        <a href="#">Blog</a>
-      </div>
-      <div class="footer-col">
-        <h4>Connect</h4>
-        <a href="mailto:hello@pingframe-inc.com">Email</a>
-        <a href="#">Twitter</a>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      © 2025 PingFrame, Inc.
-    </div>
+    <p>© 2025 PingFrame, Inc. • <a href="mailto:hello@pingframe-inc.com">Contact Us</a></p>
   </footer>
+
 </body>
 </html>
