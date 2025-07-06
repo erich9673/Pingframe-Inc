@@ -5,147 +5,158 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>PingFrame, Inc.</title>
   <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background-color: #f4f6f8;
-      color: #333;
-    }
+  body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f4f6f8;
+    color: #333;
+  }
 
-    /* Navigation Bar */
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #ffffff;
+    padding: 16px 32px;
+    border-bottom: 1px solid #e1e4e8;
+  }
+
+  .nav-left {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+  }
+
+  .nav-left img {
+    width: 100px;
+    height: auto;
+  }
+
+  .nav-right {
+    display: flex;
+    gap: 24px;
+    align-items: center;
+  }
+
+  .nav-item {
+    position: relative;
+  }
+
+  .nav-link {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    cursor: pointer;
+    transition: color 0.3s;
+  }
+
+  .nav-link:hover {
+    color: #007bff;
+  }
+
+  .nav-item:hover .dropdown {
+    display: block;
+  }
+
+  .dropdown {
+    display: none;
+    position: absolute;
+    background-color: white;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    padding: 12px;
+    top: 100%;
+    left: 0;
+    z-index: 100;
+  }
+
+  .dropdown a {
+    display: block;
+    padding: 8px 12px;
+    text-decoration: none;
+    color: #333;
+    transition: background-color 0.2s;
+  }
+
+  .dropdown a:hover {
+    background-color: #f0f0f0;
+  }
+
+  .btn {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 6px;
+    text-decoration: none;
+    font-size: 0.95rem;
+    transition: background-color 0.2s;
+  }
+
+  .btn:hover {
+    background-color: #0056b3;
+  }
+
+  header {
+    text-align: center;
+    padding: 60px 20px 40px;
+  }
+
+  h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+  }
+
+  p {
+    font-size: 1.2rem;
+    margin: 0 auto 30px;
+    max-width: 600px;
+  }
+
+  section {
+    padding: 40px 20px;
+    text-align: center;
+  }
+
+  section h2 {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+  }
+
+  ul {
+    list-style: none;
+    padding: 0;
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: left;
+  }
+
+  li {
+    margin: 15px 0;
+    font-size: 1.1rem;
+  }
+
+  footer {
+    background: #fff;
+    padding: 20px;
+    border-top: 1px solid #e1e4e8;
+    text-align: center;
+    font-size: 0.9rem;
+  }
+
+  @media (max-width: 768px) {
     .navbar {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      background-color: #ffffff;
-      padding: 16px 32px;
-      border-bottom: 1px solid #e1e4e8;
+      flex-direction: column;
+      align-items: flex-start;
     }
-
-    .nav-left {
-      display: flex;
-      align-items: center;
-      gap: 24px;
-    }
-
-    .nav-left img {
-      width: 100px;
-      height: auto;
-    }
-
     .nav-right {
-      display: flex;
-      gap: 24px;
-      align-items: center;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 12px;
+      width: 100%;
     }
+  }
+</style>
 
-    .nav-item {
-      position: relative;
-    }
-
-    .nav-link {
-      text-decoration: none;
-      color: #333;
-      font-weight: 500;
-      cursor: pointer;
-    }
-
-    .nav-item:hover .dropdown {
-      display: block;
-    }
-
-    .dropdown {
-      display: none;
-      position: absolute;
-      background-color: white;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-      padding: 12px;
-      top: 100%;
-      left: 0;
-      z-index: 100;
-    }
-
-    .dropdown a {
-      display: block;
-      padding: 8px 12px;
-      text-decoration: none;
-      color: #333;
-    }
-
-    .dropdown a:hover {
-      background-color: #f0f0f0;
-    }
-
-    .btn {
-      background-color: #007bff;
-      color: white;
-      padding: 10px 20px;
-      border: none;
-      border-radius: 6px;
-      text-decoration: none;
-      font-size: 0.95rem;
-    }
-
-    header {
-      text-align: center;
-      padding: 60px 20px 40px;
-    }
-
-    h1 {
-      font-size: 2.5rem;
-      margin-bottom: 20px;
-    }
-
-    p {
-      font-size: 1.2rem;
-      margin: 0 auto 30px;
-      max-width: 600px;
-    }
-
-    section {
-      padding: 40px 20px;
-      text-align: center;
-    }
-
-    section h2 {
-      font-size: 1.8rem;
-      margin-bottom: 20px;
-    }
-
-    ul {
-      list-style: none;
-      padding: 0;
-      max-width: 600px;
-      margin: 0 auto;
-      text-align: left;
-    }
-
-    li {
-      margin: 15px 0;
-      font-size: 1.1rem;
-    }
-
-    footer {
-      background: #fff;
-      padding: 20px;
-      border-top: 1px solid #e1e4e8;
-      text-align: center;
-      font-size: 0.9rem;
-    }
-
-    @media (max-width: 768px) {
-      .navbar {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-      .nav-right {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 12px;
-        width: 100%;
-      }
-    }
-  </style>
 </head>
 <body>
 
@@ -161,7 +172,8 @@
           <a href="#">PingFrame Analytics</a>
         </div>
       </div>
-
+          <a href="#" class="nav-link">Partners</a>
+      
       <div class="nav-item">
         <span class="nav-link">Company ▾</span>
         <div class="dropdown">
