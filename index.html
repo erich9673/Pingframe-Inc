@@ -8,263 +8,63 @@
   <style>
     :root {
       --red: #e53935;
-      --red-dark: #b71c1c;
       --green: #34c759;
-      --green-dark: #1e8b3a;
       --white: #fff;
-      --offwhite: #f8f9fa;
       --gray: #253858;
-      --slack: #36c5f0;
+      --offwhite: #f8f9fa;
     }
-    body {
-      font-family: 'Inter', Arial, sans-serif;
-      background: var(--offwhite);
-      color: var(--gray);
-      margin: 0;
-      padding: 0;
-    }
+    body { font-family: 'Inter', Arial, sans-serif; background: var(--offwhite); color: var(--gray); margin: 0; }
+    .navbar, .section, .trusted, footer { background: var(--white); }
     .navbar {
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-      background: var(--white);
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 18px 40px;
-      box-shadow: 0 2px 8px rgba(229,57,53,0.05);
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 18px 40px; box-shadow: 0 2px 8px rgba(229,57,53,0.05);
+      position: sticky; top: 0; z-index: 1000;
     }
-    .navbar .logo {
-      height: 40px;
-      filter: drop-shadow(0 0 3px var(--green));
-    }
-    .nav-menu {
-      display: flex;
-      gap: 32px;
-      align-items: center;
-      flex: 1;
-      justify-content: center;
-    }
-    .nav-link {
-      font-weight: 600;
-      text-decoration: none;
-      color: var(--gray);
-      padding: 8px 12px;
-      border-radius: 4px;
-      transition: background 0.2s, color 0.2s;
-    }
-    .nav-link:hover {
-      background: var(--green);
-      color: var(--white);
-    }
+    .navbar .logo { height: 40px; }
+    .nav-menu { display: flex; gap: 32px; justify-content: center; flex: 1; }
+    .nav-link { font-weight: 600; color: var(--gray); text-decoration: none; padding: 8px 12px; border-radius: 4px; }
+    .nav-link:hover { background: var(--green); color: var(--white); }
     .cta-btn {
-      background: linear-gradient(90deg, var(--red) 0%, var(--green) 100%);
-      color: var(--white);
-      border: none;
-      border-radius: 6px;
-      padding: 10px 22px;
-      font-size: 1rem;
-      font-weight: 600;
-      margin-left: 16px;
-      text-decoration: none;
-      box-shadow: 0 2px 8px rgba(229,57,53,0.08);
-      transition: background 0.2s;
+      background: linear-gradient(90deg, var(--red), var(--green));
+      color: var(--white); border: none; border-radius: 6px;
+      padding: 10px 22px; font-weight: 600; text-decoration: none;
     }
-    .cta-btn:hover {
-      background: linear-gradient(90deg, var(--red-dark) 0%, var(--green-dark) 100%);
-    }
-
-    /* HERO SECTION */
+    .cta-btn:hover { background: var(--green); }
     .hero {
-      background: linear-gradient(90deg, var(--green) 0%, var(--red) 100%);
-      color: var(--white);
-      padding: 90px 0 70px 0;
-      text-align: center;
-      position: relative;
-      overflow: hidden;
+      background: linear-gradient(90deg, var(--green), var(--red)); color: var(--white);
+      padding: 90px 0 70px; text-align: center;
     }
-    .hero h1 {
-      font-size: 2.7rem;
-      font-weight: 700;
-      margin-bottom: 22px;
-      line-height: 1.15;
-      color: var(--white);
-      text-shadow: 0 2px 22px var(--red-dark), 0 1px 0 var(--green-dark);
-    }
-    .hero p {
-      font-size: 1.25rem;
-      margin-bottom: 38px;
-      max-width: 600px;
-      margin-left: auto;
-      margin-right: auto;
-      color: var(--white);
-      background: rgba(255,255,255,0.08);
-      border-radius: 10px;
-      padding: 12px;
-      box-shadow: 0 2px 8px rgba(52,199,89,0.09);
-    }
+    .hero h1 { font-size: 2.3rem; margin-bottom: 22px; font-weight: 700; }
+    .hero p { font-size: 1.1rem; margin-bottom: 32px; max-width: 600px; margin-left: auto; margin-right: auto; }
     .hero-cta {
-      background: var(--white);
-      color: var(--red);
-      font-weight: 700;
-      border-radius: 6px;
-      padding: 12px 30px;
-      text-decoration: none;
-      font-size: 1.1rem;
-      box-shadow: 0 2px 8px rgba(229,57,53,0.13);
-      border: 2px solid var(--green);
-      transition: background 0.2s, color 0.2s, border 0.2s;
+      background: var(--white); color: var(--red); font-weight: 700;
+      border-radius: 6px; padding: 12px 30px; text-decoration: none; border: 2px solid var(--green);
     }
-    .hero-cta:hover {
-      background: var(--green);
-      color: var(--white);
-      border: 2px solid var(--red);
-    }
-    .hero-img {
-      margin-top: 40px;
-      max-width: 340px;
-      width: 90vw;
-      border-radius: 18px;
-      box-shadow: 0 8px 32px rgba(229,57,53,0.15);
-      background: var(--white);
-      border: 3px solid var(--green);
-    }
-
-    /* FEATURES */
-    .section {
-      padding: 70px 0 50px 0;
-      background: var(--white);
-      text-align: center;
-    }
-    .section.alt {
-      background: var(--offwhite);
-    }
-    .features-grid {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 40px;
-      margin-top: 38px;
-    }
+    .hero-cta:hover { background: var(--green); color: var(--white); border: 2px solid var(--red); }
+    .hero-img { margin-top: 40px; max-width: 340px; width: 90vw; border-radius: 16px; border: 2px solid var(--green); }
+    .section, .section.alt { text-align: center; padding: 50px 0 35px; }
+    .section.alt { background: var(--offwhite);}
+    .features-grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 32px; margin-top: 28px; }
     .feature {
-      background: var(--white);
-      border-radius: 12px;
-      box-shadow: 0 2px 8px rgba(52,199,89,0.07);
-      padding: 30px 24px;
-      max-width: 320px;
-      text-align: left;
-      flex: 1 1 280px;
-      border-top: 4px solid var(--green);
-      transition: border-top 0.2s;
+      background: var(--white); border-radius: 12px; box-shadow: 0 2px 8px rgba(52,199,89,0.07);
+      padding: 26px 18px; max-width: 320px; text-align: left; flex: 1 1 240px; border-top: 4px solid var(--green);
     }
-    .feature-icon {
-      font-size: 2.6rem;
-      margin-bottom: 18px;
-      color: var(--red);
-      background: var(--white);
-      border-radius: 50%;
-      border: 2px solid var(--green);
-      display: inline-block;
-      width: 52px;
-      height: 52px;
-      text-align: center;
-      line-height: 48px;
-      box-shadow: 0 2px 8px rgba(229,57,53,0.09);
-    }
-    .feature-title {
-      font-size: 1.2rem;
-      font-weight: 700;
-      margin-bottom: 8px;
-      color: var(--green-dark);
-    }
-    .feature-desc {
-      font-size: 1rem;
-      color: var(--gray);
-    }
-
-    /* TRUSTED BY */
-    .trusted {
-      padding: 30px 0 10px 0;
-      background: var(--white);
-      text-align: center;
-    }
-    .trusted-logos {
-      display: flex;
-      justify-content: center;
-      gap: 40px;
-      margin-top: 16px;
-      flex-wrap: wrap;
-    }
-    .trusted-logos img {
-      height: 36px;
-      opacity: 0.85;
-      filter: grayscale(0) drop-shadow(0 0 2px var(--green));
-    }
-
-    /* BENEFITS SECTION */
-    .section.alt h2 {
-      color: var(--red);
-    }
-    .section.alt p {
-      color: var(--green-dark);
-      font-weight: 500;
-    }
-
-    /* FOOTER */
-    footer {
-      background: var(--red-dark);
-      color: var(--white);
-      padding: 40px 0 20px 0;
-    }
-    .footer-content {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 50px;
-      max-width: 1100px;
-      margin: 0 auto 30px auto;
-    }
-    .footer-col {
-      min-width: 180px;
-    }
-    .footer-col h4 {
-      font-size: 1.05rem;
-      font-weight: 700;
-      margin-bottom: 18px;
-      color: var(--green);
-    }
-    .footer-col a {
-      color: #ffeaea;
-      text-decoration: none;
-      display: block;
-      margin-bottom: 10px;
-      font-size: 0.98rem;
-      transition: color 0.2s;
-    }
-    .footer-col a:hover {
-      color: var(--white);
-      text-decoration: underline;
-    }
-    .footer-bottom {
-      text-align: center;
-      color: #ffb3b3;
-      font-size: 0.95rem;
-    }
+    .feature-icon { font-size: 2.1rem; margin-bottom: 12px; color: var(--red);}
+    .feature-title { font-weight: 700; margin-bottom: 6px; color: var(--green);}
+    .trusted-logos { display: flex; justify-content: center; gap: 30px; margin-top: 8px; flex-wrap: wrap; }
+    .trusted-logos img { height: 30px; opacity: 0.85; }
+    footer { background: var(--red); color: var(--white); padding: 28px 0 10px; }
+    .footer-content { display: flex; flex-wrap: wrap; justify-content: center; gap: 32px; max-width: 900px; margin: 0 auto 20px; }
+    .footer-col h4 { font-size: 1rem; font-weight: 700; margin-bottom: 12px; color: var(--green);}
+    .footer-col a { color: #ffeaea; text-decoration: none; display: block; margin-bottom: 6px; font-size: 0.98rem; }
+    .footer-col a:hover { color: var(--white); text-decoration: underline; }
+    .footer-bottom { text-align: center; color: #ffb3b3; font-size: 0.95rem; }
     @media (max-width: 900px) {
-      .features-grid {
-        flex-direction: column;
-        align-items: center;
-      }
-      .footer-content {
-        flex-direction: column;
-        align-items: center;
-        gap: 28px;
-      }
+      .features-grid, .footer-content { flex-direction: column; align-items: center; gap: 18px; }
     }
   </style>
 </head>
 <body>
-  <!-- NAVIGATION -->
   <nav class="navbar">
     <img src="assets/img/GPT3.png" alt="PingFrame Logo" class="logo" />
     <div class="nav-menu">
@@ -273,66 +73,47 @@
       <a href="#" class="nav-link">Resources</a>
       <a href="#" class="nav-link">Pricing</a>
     </div>
-    <div>
-      <a href="https://docs.google.com/forms/d/e/1FAIpQLSdWczLkiWUv1JCdNLImhXUbEo6lkWClddcbidI-K-5qIpGz9g/viewform?usp=preview" class="cta-btn">Join the Beta</a>
-    </div>
+    <a href="https://docs.google.com/forms/d/e/1FAIpQLSdWczLkiWUv1JCdNLImhXUbEo6lkWClddcbidI-K-5qIpGz9g/viewform?usp=preview" class="cta-btn">Join the Beta</a>
   </nav>
-
-  <!-- HERO SECTION -->
   <section class="hero">
     <h1>Get Notified When It Matters</h1>
-    <p>
-      Connect Google Sheets and Analytics to Slack or Teams.<br>
-      Instantly alert your team the moment data changes —
-      <span style="color:var(--red);font-weight:700;">red</span> for critical alerts,
-      <span style="color:var(--green);font-weight:700;">green</span> for Sheets/Slack.
-      <br>No code required, just insight.
+    <p>Connect Google Sheets and Analytics to Slack or Teams.<br>
+      Instantly alert your team when data changes — <span style="color:var(--red);font-weight:700;">red</span> for alerts, <span style="color:var(--green);font-weight:700;">green</span> for Sheets/Slack.<br>No code needed.
     </p>
     <a href="https://docs.google.com/forms/d/e/1FAIpQLSdWczLkiWUv1JCdNLImhXUbEo6lkWClddcbidI-K-5qIpGz9g/viewform?usp=preview" class="hero-cta">Request Access</a>
-    <div>
-      <img src="assets/img/GPT1.png" alt="PingFrame Example" class="hero-img" />
-    </div>
+    <div><img src="assets/img/GPT1.png" alt="PingFrame Example" class="hero-img" /></div>
   </section>
-
-  <!-- FEATURES -->
   <section class="section">
-    <h2 style="color:var(--green-dark)">How PingFrame Works</h2>
+    <h2 class="feature-title">How PingFrame Works</h2>
     <div class="features-grid">
       <div class="feature">
-        <div class="feature-icon" style="color:var(--green);border-color:var(--red);">📊</div>
+        <div class="feature-icon">📊</div>
         <div class="feature-title">Track Updates</div>
-        <div class="feature-desc">Monitor key cells, rows, or entire spreadsheets for important changes in real time.</div>
+        <div>Monitor cells, rows, or whole sheets for key changes in real time.</div>
       </div>
       <div class="feature">
-        <div class="feature-icon" style="color:var(--red);border-color:var(--green);">⚡️</div>
+        <div class="feature-icon">⚡️</div>
         <div class="feature-title">Instant Alerts</div>
-        <div class="feature-desc">Red notification for critical changes, green for successful syncs or info.</div>
+        <div>Red notifications for critical events; green for info and success.</div>
       </div>
       <div class="feature">
-        <div class="feature-icon" style="color:var(--green);border-color:var(--red);">🛠️</div>
+        <div class="feature-icon">🛠️</div>
         <div class="feature-title">No-Code Setup</div>
-        <div class="feature-desc">Connect with Google Sheets, Slack, or Teams — no coding needed.</div>
+        <div>Connect Google Sheets, Slack, or Teams — zero coding needed.</div>
       </div>
     </div>
   </section>
-
-  <!-- TRUSTED BY -->
-  <section class="trusted alt">
+  <section class="trusted section alt">
     <div>Trusted by teams at</div>
     <div class="trusted-logos">
       <img src="assets/img/logo1.png" alt="Company 1"/>
       <img src="assets/img/logo2.png" alt="Company 2"/>
-      <!-- Add more logos as needed -->
     </div>
   </section>
-
-  <!-- BENEFITS SECTION -->
   <section class="section alt">
-    <h2>Built for Fast-Moving Teams</h2>
-    <p>Stop checking spreadsheets constantly. Let <span style="color:var(--red);font-weight:600;">PingFrame</span> keep your team in the loop—automatically—with <span style="color:var(--green);font-weight:600;">green</span> and <span style="color:var(--red);font-weight:600;">red</span> alerts in Slack or Teams.</p>
+    <h2 class="feature-title">Built for Fast-Moving Teams</h2>
+    <p>No more checking spreadsheets. <span style="color:var(--red);font-weight:600;">PingFrame</span> keeps you alerted in <span style="color:var(--green);font-weight:600;">green</span> and <span style="color:var(--red);font-weight:600;">red</span> on Slack or Teams.</p>
   </section>
-
-  <!-- FOOTER -->
   <footer>
     <div class="footer-content">
       <div class="footer-col">
@@ -357,9 +138,7 @@
         <a href="#">Twitter</a>
       </div>
     </div>
-    <div class="footer-bottom">
-      © 2025 PingFrame, Inc.
-    </div>
+    <div class="footer-bottom">© 2025 PingFrame, Inc.</div>
   </footer>
 </body>
 </html>
