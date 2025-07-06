@@ -6,10 +6,20 @@
   <title>PingFrame, Inc.</title>
   <link href="https://fonts.googleapis.com/css?family=Inter:400,600,700&display=swap" rel="stylesheet">
   <style>
+    :root {
+      --red: #e53935;
+      --red-dark: #b71c1c;
+      --green: #34c759;
+      --green-dark: #1e8b3a;
+      --white: #fff;
+      --offwhite: #f8f9fa;
+      --gray: #253858;
+      --slack: #36c5f0;
+    }
     body {
       font-family: 'Inter', Arial, sans-serif;
-      background: #f7f9fa;
-      color: #253858;
+      background: var(--offwhite);
+      color: var(--gray);
       margin: 0;
       padding: 0;
     }
@@ -17,15 +27,16 @@
       position: sticky;
       top: 0;
       z-index: 1000;
-      background: #fff;
+      background: var(--white);
       display: flex;
       align-items: center;
       justify-content: space-between;
       padding: 18px 40px;
-      box-shadow: 0 2px 8px rgba(9,30,66,0.03);
+      box-shadow: 0 2px 8px rgba(229,57,53,0.05);
     }
     .navbar .logo {
       height: 40px;
+      filter: drop-shadow(0 0 3px var(--green));
     }
     .nav-menu {
       display: flex;
@@ -37,18 +48,18 @@
     .nav-link {
       font-weight: 600;
       text-decoration: none;
-      color: #253858;
+      color: var(--gray);
       padding: 8px 12px;
       border-radius: 4px;
-      transition: background 0.2s;
+      transition: background 0.2s, color 0.2s;
     }
     .nav-link:hover {
-      background: #f4f5f7;
-      color: #0052cc;
+      background: var(--green);
+      color: var(--white);
     }
     .cta-btn {
-      background: linear-gradient(90deg, #0052cc 0%, #2684ff 100%);
-      color: #fff;
+      background: linear-gradient(90deg, var(--red) 0%, var(--green) 100%);
+      color: var(--white);
       border: none;
       border-radius: 6px;
       padding: 10px 22px;
@@ -56,17 +67,17 @@
       font-weight: 600;
       margin-left: 16px;
       text-decoration: none;
-      box-shadow: 0 2px 8px rgba(38,132,255,0.07);
+      box-shadow: 0 2px 8px rgba(229,57,53,0.08);
       transition: background 0.2s;
     }
     .cta-btn:hover {
-      background: linear-gradient(90deg, #0747a6 0%, #0052cc 100%);
+      background: linear-gradient(90deg, var(--red-dark) 0%, var(--green-dark) 100%);
     }
 
     /* HERO SECTION */
     .hero {
-      background: linear-gradient(90deg, #2684ff 0%, #0052cc 100%);
-      color: #fff;
+      background: linear-gradient(90deg, var(--green) 0%, var(--red) 100%);
+      color: var(--white);
       padding: 90px 0 70px 0;
       text-align: center;
       position: relative;
@@ -77,6 +88,8 @@
       font-weight: 700;
       margin-bottom: 22px;
       line-height: 1.15;
+      color: var(--white);
+      text-shadow: 0 2px 22px var(--red-dark), 0 1px 0 var(--green-dark);
     }
     .hero p {
       font-size: 1.25rem;
@@ -84,38 +97,47 @@
       max-width: 600px;
       margin-left: auto;
       margin-right: auto;
+      color: var(--white);
+      background: rgba(255,255,255,0.08);
+      border-radius: 10px;
+      padding: 12px;
+      box-shadow: 0 2px 8px rgba(52,199,89,0.09);
     }
     .hero-cta {
-      background: #fff;
-      color: #0052cc;
-      font-weight: 600;
+      background: var(--white);
+      color: var(--red);
+      font-weight: 700;
       border-radius: 6px;
       padding: 12px 30px;
       text-decoration: none;
       font-size: 1.1rem;
-      box-shadow: 0 2px 8px rgba(38,132,255,0.13);
-      transition: background 0.2s, color 0.2s;
+      box-shadow: 0 2px 8px rgba(229,57,53,0.13);
+      border: 2px solid var(--green);
+      transition: background 0.2s, color 0.2s, border 0.2s;
     }
     .hero-cta:hover {
-      background: #e6f0ff;
-      color: #0747a6;
+      background: var(--green);
+      color: var(--white);
+      border: 2px solid var(--red);
     }
     .hero-img {
       margin-top: 40px;
       max-width: 340px;
       width: 90vw;
       border-radius: 18px;
-      box-shadow: 0 8px 32px rgba(9,30,66,0.13);
+      box-shadow: 0 8px 32px rgba(229,57,53,0.15);
+      background: var(--white);
+      border: 3px solid var(--green);
     }
 
     /* FEATURES */
     .section {
       padding: 70px 0 50px 0;
-      background: #fff;
+      background: var(--white);
       text-align: center;
     }
     .section.alt {
-      background: #f4f8fb;
+      background: var(--offwhite);
     }
     .features-grid {
       display: flex;
@@ -125,33 +147,45 @@
       margin-top: 38px;
     }
     .feature {
-      background: #fff;
+      background: var(--white);
       border-radius: 12px;
-      box-shadow: 0 2px 8px rgba(9,30,66,0.06);
+      box-shadow: 0 2px 8px rgba(52,199,89,0.07);
       padding: 30px 24px;
       max-width: 320px;
       text-align: left;
       flex: 1 1 280px;
+      border-top: 4px solid var(--green);
+      transition: border-top 0.2s;
     }
     .feature-icon {
       font-size: 2.6rem;
       margin-bottom: 18px;
-      color: #0052cc;
+      color: var(--red);
+      background: var(--white);
+      border-radius: 50%;
+      border: 2px solid var(--green);
+      display: inline-block;
+      width: 52px;
+      height: 52px;
+      text-align: center;
+      line-height: 48px;
+      box-shadow: 0 2px 8px rgba(229,57,53,0.09);
     }
     .feature-title {
       font-size: 1.2rem;
       font-weight: 700;
       margin-bottom: 8px;
+      color: var(--green-dark);
     }
     .feature-desc {
       font-size: 1rem;
-      color: #42526e;
+      color: var(--gray);
     }
 
     /* TRUSTED BY */
     .trusted {
       padding: 30px 0 10px 0;
-      background: #fff;
+      background: var(--white);
       text-align: center;
     }
     .trusted-logos {
@@ -163,13 +197,23 @@
     }
     .trusted-logos img {
       height: 36px;
-      opacity: 0.7;
+      opacity: 0.85;
+      filter: grayscale(0) drop-shadow(0 0 2px var(--green));
+    }
+
+    /* BENEFITS SECTION */
+    .section.alt h2 {
+      color: var(--red);
+    }
+    .section.alt p {
+      color: var(--green-dark);
+      font-weight: 500;
     }
 
     /* FOOTER */
     footer {
-      background: #091e42;
-      color: #fff;
+      background: var(--red-dark);
+      color: var(--white);
       padding: 40px 0 20px 0;
     }
     .footer-content {
@@ -187,9 +231,10 @@
       font-size: 1.05rem;
       font-weight: 700;
       margin-bottom: 18px;
+      color: var(--green);
     }
     .footer-col a {
-      color: #b3bac5;
+      color: #ffeaea;
       text-decoration: none;
       display: block;
       margin-bottom: 10px;
@@ -197,11 +242,12 @@
       transition: color 0.2s;
     }
     .footer-col a:hover {
-      color: #fff;
+      color: var(--white);
+      text-decoration: underline;
     }
     .footer-bottom {
       text-align: center;
-      color: #b3bac5;
+      color: #ffb3b3;
       font-size: 0.95rem;
     }
     @media (max-width: 900px) {
@@ -235,7 +281,13 @@
   <!-- HERO SECTION -->
   <section class="hero">
     <h1>Get Notified When It Matters</h1>
-    <p>Connect Google Sheets and Analytics to Slack or Teams. Instantly alert your team the moment data changes — without writing a single line of code.</p>
+    <p>
+      Connect Google Sheets and Analytics to Slack or Teams.<br>
+      Instantly alert your team the moment data changes —
+      <span style="color:var(--red);font-weight:700;">red</span> for critical alerts,
+      <span style="color:var(--green);font-weight:700;">green</span> for Sheets/Slack.
+      <br>No code required, just insight.
+    </p>
     <a href="https://docs.google.com/forms/d/e/1FAIpQLSdWczLkiWUv1JCdNLImhXUbEo6lkWClddcbidI-K-5qIpGz9g/viewform?usp=preview" class="hero-cta">Request Access</a>
     <div>
       <img src="assets/img/GPT1.png" alt="PingFrame Example" class="hero-img" />
@@ -244,22 +296,22 @@
 
   <!-- FEATURES -->
   <section class="section">
-    <h2>How PingFrame Works</h2>
+    <h2 style="color:var(--green-dark)">How PingFrame Works</h2>
     <div class="features-grid">
       <div class="feature">
-        <div class="feature-icon">📊</div>
+        <div class="feature-icon" style="color:var(--green);border-color:var(--red);">📊</div>
         <div class="feature-title">Track Updates</div>
         <div class="feature-desc">Monitor key cells, rows, or entire spreadsheets for important changes in real time.</div>
       </div>
       <div class="feature">
-        <div class="feature-icon">⚡️</div>
+        <div class="feature-icon" style="color:var(--red);border-color:var(--green);">⚡️</div>
         <div class="feature-title">Instant Alerts</div>
-        <div class="feature-desc">Send customizable notifications directly to Slack or Teams channels.</div>
+        <div class="feature-desc">Red notification for critical changes, green for successful syncs or info.</div>
       </div>
       <div class="feature">
-        <div class="feature-icon">🛠️</div>
+        <div class="feature-icon" style="color:var(--green);border-color:var(--red);">🛠️</div>
         <div class="feature-title">No-Code Setup</div>
-        <div class="feature-desc">Connect with Google Sheets — no coding or technical setup required.</div>
+        <div class="feature-desc">Connect with Google Sheets, Slack, or Teams — no coding needed.</div>
       </div>
     </div>
   </section>
@@ -277,7 +329,7 @@
   <!-- BENEFITS SECTION -->
   <section class="section alt">
     <h2>Built for Fast-Moving Teams</h2>
-    <p>Stop constantly checking spreadsheets. Stay on top of inventory, budgets, or project statuses — PingFrame keeps your team in the loop, automatically.</p>
+    <p>Stop checking spreadsheets constantly. Let <span style="color:var(--red);font-weight:600;">PingFrame</span> keep your team in the loop—automatically—with <span style="color:var(--green);font-weight:600;">green</span> and <span style="color:var(--red);font-weight:600;">red</span> alerts in Slack or Teams.</p>
   </section>
 
   <!-- FOOTER -->
