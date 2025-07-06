@@ -6,69 +6,152 @@
   <title>PingFrame, Inc.</title>
   <style>
     body {
+      margin: 0;
       font-family: Arial, sans-serif;
       background-color: #f4f6f8;
-      margin: 0;
-      padding: 0;
       color: #333;
-      text-align: center;
     }
-    header {
+
+    /* Navigation Bar */
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
       background-color: #ffffff;
-      padding: 60px 20px 40px;
+      padding: 16px 32px;
       border-bottom: 1px solid #e1e4e8;
     }
-    .logo {
-      width: 120px;
-      margin-bottom: 20px;
+
+    .nav-left {
+      display: flex;
+      align-items: center;
+      gap: 24px;
     }
+
+    .nav-left img {
+      width: 100px;
+      height: auto;
+    }
+
+    .nav-right {
+      display: flex;
+      gap: 24px;
+      align-items: center;
+    }
+
+    .nav-item {
+      position: relative;
+    }
+
+    .nav-link {
+      text-decoration: none;
+      color: #333;
+      font-weight: 500;
+      cursor: pointer;
+    }
+
+    .nav-item:hover .dropdown {
+      display: block;
+    }
+
+    .dropdown {
+      display: none;
+      position: absolute;
+      background-color: white;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      padding: 12px;
+      top: 100%;
+      left: 0;
+      z-index: 100;
+    }
+
+    .dropdown a {
+      display: block;
+      padding: 8px 12px;
+      text-decoration: none;
+      color: #333;
+    }
+
+    .dropdown a:hover {
+      background-color: #f0f0f0;
+    }
+
+    .btn {
+      background-color: #007bff;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 6px;
+      text-decoration: none;
+      font-size: 0.95rem;
+    }
+
+    header {
+      text-align: center;
+      padding: 60px 20px 40px;
+    }
+
     h1 {
       font-size: 2.5rem;
       margin-bottom: 20px;
     }
+
     p {
       font-size: 1.2rem;
-      margin-bottom: 30px;
+      margin: 0 auto 30px;
       max-width: 600px;
-      margin-left: auto;
-      margin-right: auto;
     }
-    .btn {
-      background-color: #007bff;
-      color: white;
-      padding: 14px 28px;
-      text-decoration: none;
-      border-radius: 6px;
-      font-size: 1rem;
-    }
-    section {
-      padding: 50px 20px;
-    }
-    ul {
-      list-style: none;
-      padding: 0;
-      max-width: 600px;
-      margin: 0 auto;
-    }
-    li {
-      margin: 15px 0;
-      font-size: 1.1rem;
-    }
-    footer {
-      background: #fff;
-      padding: 20px;
-      border-top: 1px solid #e1e4e8;
-      font-size: 0.9rem;
+
+    @media (max-width: 768px) {
+      .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .nav-right {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+        width: 100%;
+      }
     }
   </style>
 </head>
 <body>
 
+  <!-- NAVIGATION -->
+  <div class="navbar">
+    <div class="nav-left">
+      <img src="assets/img/logo.png" alt="PingFrame Logo" />
+      
+      <div class="nav-item">
+        <span class="nav-link">Products ▾</span>
+        <div class="dropdown">
+          <a href="#">PingFrame Sheets</a>
+          <a href="#">PingFrame Analytics</a>
+        </div>
+      </div>
+
+      <a href="#" class="nav-link">Partners</a>
+
+      <div class="nav-item">
+        <span class="nav-link">Company ▾</span>
+        <div class="dropdown">
+          <a href="#">About</a>
+          <a href="#">Careers</a>
+          <a href="#">Contact</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="nav-right">
+      <a href="https://docs.google.com/forms/d/e/1FAIpQLSdWczLkiWUv1JCdNLImhXUbEo6lkWClddcbidI-K-5qIpGz9g/viewform?usp=preview" class="btn">Join the Beta</a>
+    </div>
+  </div>
+
+  <!-- HERO SECTION -->
   <header>
-    <img src="assets/img/GPT3.png" alt="PingFrame logo" class="logo" />
     <h1>Get Notified When It Matters</h1>
     <p>PingFrame connects apps like Google Sheets and Google Analytics to Slack or Microsoft Teams — so your team gets real-time alerts the moment data changes.</p>
-    <a href="https://docs.google.com/forms/d/e/1FAIpQLSdWczLkiWUv1JCdNLImhXUbEo6lkWClddcbidI-K-5qIpGz9g/viewform?usp=preview" class="btn">Join the Beta</a>
   </header>
 
 </body>
