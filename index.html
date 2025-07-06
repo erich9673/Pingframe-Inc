@@ -5,174 +5,181 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>PingFrame, Inc.</title>
   <style>
-  body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background-color: #f4f6f8;
-    color: #333;
-  }
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #f4f6f8;
+      color: #333;
+    }
 
-  .navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #fff;
-    padding: 16px 32px;
-    border-bottom: 1px solid #e1e4e8;
-  }
-
-  .nav-left {
-    display: flex;
-    align-items: center;
-    gap: 24px;
-  }
-
-  .nav-left img {
-    width: 100px;
-    height: auto;
-  }
-
-  .nav-right {
-    display: flex;
-    gap: 24px;
-    align-items: center;
-  }
-
-  .nav-item {
-    position: relative;
-  }
-
-  .nav-link {
-    text-decoration: none;
-    color: #333;
-    font-weight: 500;
-    cursor: pointer;
-    transition: color 0.3s;
-  }
-
-  .nav-link:hover {
-    color: #e53935;
-  }
-
-  .nav-item:hover .dropdown {
-    display: block;
-  }
-
-  .dropdown {
-    display: none;
-    position: absolute;
-    background-color: #fff;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-    padding: 12px;
-    top: 100%;
-    left: 0;
-    z-index: 100;
-  }
-
-  .dropdown a {
-    display: block;
-    padding: 8px 12px;
-    text-decoration: none;
-    color: #333;
-    transition: background-color 0.2s;
-  }
-
-  .dropdown a:hover {
-    background-color: #e8f5e9;
-    color: #43a047;
-  }
-
-  .btn {
-    background-color: #e53935;
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 6px;
-    text-decoration: none;
-    font-size: 0.95rem;
-    transition: background-color 0.2s;
-  }
-
-  .btn:hover {
-    background-color: #43a047;
-  }
-
-  header {
-    text-align: center;
-    padding: 60px 20px 40px;
-    background: linear-gradient(90deg, #e53935 0%, #43a047 100%);
-    color: #fff;
-  }
-
-  h1 {
-    font-size: 2.5rem;
-    margin-bottom: 20px;
-  }
-
-  p {
-    font-size: 1.2rem;
-    margin: 0 auto 30px;
-    max-width: 600px;
-  }
-
-  section {
-    padding: 40px 20px;
-    text-align: center;
-    background-color: #fff;
-  }
-
-  section h2 {
-    font-size: 1.8rem;
-    margin-bottom: 20px;
-    color: #e53935;
-  }
-
-  ul {
-    list-style: none;
-    padding: 0;
-    max-width: 600px;
-    margin: 0 auto;
-    text-align: left;
-  }
-
-  li {
-    margin: 15px 0;
-    font-size: 1.1rem;
-    color: #333;
-  }
-
-  .feature-green {
-    color: #43a047;
-    font-weight: bold;
-  }
-
-  .feature-red {
-    color: #e53935;
-    font-weight: bold;
-  }
-
-  footer {
-    background: #fff;
-    padding: 20px;
-    border-top: 1px solid #e1e4e8;
-    text-align: center;
-    font-size: 0.9rem;
-  }
-
-  @media (max-width: 768px) {
     .navbar {
-      flex-direction: column;
-      align-items: flex-start;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: #fff;
+      padding: 16px 32px;
+      border-bottom: 1px solid #e1e4e8;
     }
-    .nav-right {
-      flex-direction: column;
-      align-items: flex-start;
-      gap: 12px;
-      width: 100%;
-    }
-  }
-</style>
 
+    .nav-left {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+    }
+
+    .nav-left img {
+      width: 100px;
+      height: auto;
+    }
+
+    .nav-right {
+      display: flex;
+      gap: 24px;
+      align-items: center;
+    }
+
+    .nav-item {
+      position: relative;
+    }
+
+    .nav-link {
+      text-decoration: none;
+      color: #333;
+      font-weight: 500;
+      cursor: pointer;
+      transition: color 0.3s;
+    }
+
+    .nav-link:hover {
+      color: #e53935;
+    }
+
+    .nav-item:hover .dropdown {
+      display: block;
+    }
+
+    .dropdown {
+      display: none;
+      position: absolute;
+      background-color: #fff;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      padding: 12px;
+      top: 100%;
+      left: 0;
+      z-index: 100;
+      width: 250px;
+    }
+
+    .dropdown a {
+      display: block;
+      padding: 8px 12px;
+      text-decoration: none;
+      color: #333;
+      transition: background-color 0.2s;
+    }
+
+    .dropdown a:hover {
+      background-color: #e8f5e9;
+      color: #43a047;
+    }
+
+    .dropdown-description {
+      font-size: 0.85rem;
+      color: #555;
+      padding-left: 12px;
+      padding-bottom: 8px;
+    }
+
+    .btn {
+      background-color: #e53935;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 6px;
+      text-decoration: none;
+      font-size: 0.95rem;
+      transition: background-color 0.2s;
+    }
+
+    .btn:hover {
+      background-color: #43a047;
+    }
+
+    header {
+      text-align: center;
+      padding: 60px 20px 40px;
+      background: linear-gradient(90deg, #e53935 0%, #43a047 100%);
+      color: #fff;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+    }
+
+    p {
+      font-size: 1.2rem;
+      margin: 0 auto 30px;
+      max-width: 600px;
+    }
+
+    section {
+      padding: 40px 20px;
+      text-align: center;
+      background-color: #fff;
+    }
+
+    section h2 {
+      font-size: 1.8rem;
+      margin-bottom: 20px;
+      color: #e53935;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+      max-width: 600px;
+      margin: 0 auto;
+      text-align: left;
+    }
+
+    li {
+      margin: 15px 0;
+      font-size: 1.1rem;
+      color: #333;
+    }
+
+    .feature-green {
+      color: #43a047;
+      font-weight: bold;
+    }
+
+    .feature-red {
+      color: #e53935;
+      font-weight: bold;
+    }
+
+    footer {
+      background: #fff;
+      padding: 20px;
+      border-top: 1px solid #e1e4e8;
+      text-align: center;
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 768px) {
+      .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .nav-right {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+        width: 100%;
+      }
+    }
+  </style>
 </head>
 <body>
 
@@ -180,16 +187,20 @@
   <div class="navbar">
     <div class="nav-left">
       <img src="assets/img/GPT3.png" alt="PingFrame Logo" />
-      
+
       <div class="nav-item">
         <span class="nav-link">Products ▾</span>
         <div class="dropdown">
           <a href="#">PingFrame Sheets</a>
+          <div class="dropdown-description">Sheets Connector that monitors updates and sends alerts.</div>
           <a href="#">PingFrame Analytics</a>
+          <div class="dropdown-description">Analytics Alert for real-time GA changes in Slack or Teams.</div>
         </div>
       </div>
+
       <a href="#" class="nav-link">Partners</a>
-      
+      <a href="#" class="nav-link">About Us</a>
+
       <div class="nav-item">
         <span class="nav-link">Company ▾</span>
         <div class="dropdown">
@@ -231,6 +242,12 @@
     <p>Whether you're tracking inventory, marketing budgets, or project statuses — PingFrame makes sure your team is always in the loop without constantly checking spreadsheets.</p>
   </section>
 
+  <!-- NEW INFO PARAGRAPH -->
+  <section>
+    <p><strong>Instantly alert your team the moment data changes!</strong></p>
+  </section>
+
+  <!-- FOOTER -->
   <footer>
     <p>© 2025 PingFrame, Inc. • <a href="mailto:hello@pingframe-inc.com">Contact Us</a></p>
   </footer>
