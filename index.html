@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>PingFrame, Inc.</title>
   <link href="https://fonts.googleapis.com/css?family=Inter:400,600,700&display=swap" rel="stylesheet">
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg width='32' height='32' viewBox='0 0 32 32' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Crect x='3' y='3' width='26' height='26' rx='5' fill='white' stroke='%23e53935' stroke-width='3'/%3E%3Cpath d='M16 9a5 5 0 0 0-5 5v2.5c0 .61-.22 1.2-.62 1.65L9 19h14l-1.38-1.85A2.1 2.1 0 0 1 21 16.5V14a5 5 0 0 0-5-5Z' fill='%2343a047'/%3E%3Cellipse cx='16' cy='23.5' rx='2' ry='1.5' fill='%23e53935'/%3E%3C/svg%3E" />
+  <link rel="icon" type="image/png" href="assets/img/GPT3.png" />
   <style>
     :root {
       --alert-red: #e53935;
@@ -37,11 +37,10 @@
       padding: 18px 40px;
       box-shadow: var(--shadow);
     }
-    .logo-svg {
+    .logo-img {
       width: 44px;
       height: 44px;
       margin-right: 16px;
-      display: inline-block;
       vertical-align: middle;
     }
     .brandname {
@@ -217,9 +216,9 @@
       min-width: 210px;
     }
     .feature-icon {
-      width: 44px;
-      height: 44px;
+      font-size: 2rem;
       margin-bottom: 18px;
+      color: var(--alert-red);
       display: block;
     }
     .feature-title {
@@ -296,11 +295,7 @@
   <!-- NAVIGATION -->
   <nav class="navbar">
     <span>
-      <svg class="logo-svg" viewBox="0 0 32 32" fill="none">
-        <rect x="3" y="3" width="26" height="26" rx="5" fill="#fff" stroke="#e53935" stroke-width="3"/>
-        <path d="M16 9a5 5 0 0 0-5 5v2.5c0 .61-.22 1.2-.62 1.65L9 19h14l-1.38-1.85A2.1 2.1 0 0 1 21 16.5V14a5 5 0 0 0-5-5Z" fill="#43a047"/>
-        <ellipse cx="16" cy="23.5" rx="2" ry="1.5" fill="#e53935"/>
-      </svg>
+      <img src="assets/img/GPT3.png" alt="PingFrame Logo" class="logo-img" />
       <span class="brandname">PingFrame</span>
     </span>
     <div class="nav-menu">
@@ -353,30 +348,17 @@
     <h2>How PingFrame Works</h2>
     <div class="features-grid">
       <div class="feature">
-        <svg class="feature-icon" viewBox="0 0 44 44">
-          <rect x="4" y="4" width="36" height="36" rx="8" fill="#fff" stroke="#43a047" stroke-width="3"/>
-          <rect x="12" y="14" width="20" height="4" rx="2" fill="#43a047"/>
-          <rect x="12" y="22" width="14" height="4" rx="2" fill="#e53935"/>
-          <rect x="12" y="30" width="10" height="4" rx="2" fill="#36c5f0"/>
-        </svg>
+        <span class="feature-icon">📊</span>
         <div class="feature-title">Track Updates</div>
         <div class="feature-desc">Monitor key cells, rows, or entire spreadsheets for important changes in real time.</div>
       </div>
       <div class="feature">
-        <svg class="feature-icon" viewBox="0 0 44 44">
-          <circle cx="22" cy="22" r="16" fill="#fff" stroke="#e53935" stroke-width="3"/>
-          <path d="M22 10v8M22 26v8M10 22h8M26 22h8" stroke="#e53935" stroke-width="3" stroke-linecap="round"/>
-          <circle cx="22" cy="22" r="4" fill="#e53935"/>
-        </svg>
+        <span class="feature-icon">⚡️</span>
         <div class="feature-title">Instant Alerts</div>
         <div class="feature-desc">Send customizable notifications directly to Slack or Teams channels.</div>
       </div>
       <div class="feature">
-        <svg class="feature-icon" viewBox="0 0 44 44">
-          <rect x="9" y="13" width="26" height="18" rx="5" fill="#fff" stroke="#36c5f0" stroke-width="3"/>
-          <circle cx="22" cy="22" r="4" fill="#36c5f0"/>
-          <rect x="15" y="28" width="14" height="2" rx="1" fill="#43a047"/>
-        </svg>
+        <span class="feature-icon">🛠️</span>
         <div class="feature-title">No-Code Setup</div>
         <div class="feature-desc">Connect with Google Sheets — no coding or technical setup required.</div>
       </div>
