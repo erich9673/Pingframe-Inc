@@ -21,7 +21,9 @@ body {
   border-bottom: 3px solid #dc2626;
 }
 .navbar .logo {
-  height: 40px;
+  height: 48px;
+  max-height: 48px;
+  margin-right: 24px;
 }
 .nav-menu {
   display: flex;
