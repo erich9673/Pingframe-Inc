@@ -10973,7 +10973,8 @@ footer.footer {
 }
 
 .logo {
-  width: 700px;   
-  height: 500px; 
-  display: block; 
+  width: 120px;
+  height: 32px;
+  object-fit: contain;
+  display: block;
 }
