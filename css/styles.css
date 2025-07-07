@@ -10973,7 +10973,7 @@ footer.footer {
 }
 
 .logo {
-  width: 140px;   /* Try 100px, 180px, or any value you want */
-  height: auto;   /* Keeps the aspect ratio */
-  display: block; /* Helps with layout issues in some cases */
+  width: 140px;   
+  height: auto; 
+  display: block; 
 }
