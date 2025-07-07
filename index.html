@@ -41,11 +41,51 @@
       padding: 8px 12px;
       border-radius: 4px;
       transition: background 0.2s;
+      position: relative;
     }
-    .nav-link:hover {
+    .nav-link:hover,
+    .nav-link:focus {
       background: #f4f5f7;
       color: #0052cc;
     }
+
+    /* Dropdown Styles */
+    .dropdown {
+      position: relative;
+      display: inline-block;
+    }
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      left: 0;
+      top: 100%;
+      min-width: 180px;
+      background: #fff;
+      box-shadow: 0 4px 18px rgba(9,30,66,0.13);
+      z-index: 2000;
+      border-radius: 6px;
+      margin-top: 6px;
+      padding: 10px 0;
+    }
+    .dropdown-content a {
+      color: #253858;
+      padding: 10px 24px;
+      text-decoration: none;
+      display: block;
+      font-weight: 500;
+      border-radius: 0;
+      background: none;
+      transition: background 0.2s, color 0.2s;
+    }
+    .dropdown-content a:hover {
+      background: #f4f5f7;
+      color: #0052cc;
+    }
+    .dropdown:hover .dropdown-content,
+    .dropdown:focus-within .dropdown-content {
+      display: block;
+    }
+
     .cta-btn {
       background: linear-gradient(90deg, #0052cc 0%, #2684ff 100%);
       color: #fff;
@@ -196,6 +236,12 @@
         align-items: center;
         gap: 28px;
       }
+      /* Responsive Dropdown */
+      .dropdown-content {
+        left: 0;
+        right: auto;
+        min-width: 160px;
+      }
     }
   </style>
 </head>
@@ -204,12 +250,18 @@
   <nav class="navbar">
     <img src="assets/img/GPT3.png" alt="PingFrame Logo" class="logo" />
     <div class="nav-menu">
-      <a href="#" class="nav-link">Products</a>
+      <div class="dropdown">
+        <a href="#" class="nav-link" tabindex="0">Products &#x25BE;</a>
+        <div class="dropdown-content">
+          <a href="#">PingFrame Sheets</a>
+          <a href="#">PingFrame Analytics</a>
+        </div>
+      </div>
+      <a href="#" class="nav-link">Partners</a>
       <a href="#" class="nav-link">About Us</a>
       <a href="#" class="nav-link">Resources</a>
-      <a href="#" class="nav-link">Pricing</a>
     </div>
-    <!-- Removed Join the Beta button -->
+    <!-- No CTA button -->
   </nav>
 
   <!-- HERO SECTION -->
