@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PingFrame Sheets Connector</title>
+  <link href="https://fonts.googleapis.com/css?family=Inter:400,600,700&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Inter', Arial, sans-serif; background: #f7f9fa; color: #253858; margin: 0; padding: 0;}
+    .hero { background: linear-gradient(90deg, #2684ff 0%, #0052cc 100%); color: #fff; padding: 70px 0 50px 0; text-align: center;}
+    .hero h1 { font-size: 2.4rem; font-weight: 700; margin-bottom: 18px;}
+    .hero p { font-size: 1.15rem; margin-bottom: 34px; max-width: 600px; margin-left: auto; margin-right: auto;}
+    .cta-btn { background: #fff; color: #0052cc; font-weight: 600; border-radius: 6px; padding: 12px 30px; text-decoration: none; font-size: 1.1rem;}
+    .section { background: #fff; padding: 50px 0; text-align: center;}
+    .features-grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 32px; margin-top: 32px;}
+    .feature { background: #f4f8fb; border-radius: 12px; box-shadow: 0 2px 8px rgba(9,30,66,0.06); padding: 26px 18px; max-width: 320px; text-align: left; flex: 1 1 240px;}
+    .feature-icon { font-size: 2.3rem; margin-bottom: 12px; color: #0052cc;}
+    .feature-title { font-size: 1.12rem; font-weight: 700; margin-bottom: 8px;}
+    .feature-desc { font-size: 1rem; color: #42526e;}
+    @media (max-width: 900px) {
+      .features-grid { flex-direction: column; align-items: center;}
+    }
+  </style>
+</head>
+<body>
+  <section class="hero">
+    <h1>PingFrame Sheets Connector</h1>
+    <p>PingFrame connects apps like Google Sheets and Google Analytics to Slack or Microsoft Teams — so your team gets real-time alerts the moment data changes.</p>
+    <a href="#" class="cta-btn">Try Now For Free</a>
+  </section>
+  <section class="section">
+    <h2>Key Features</h2>
+    <div class="features-grid">
+      <div class="feature">
+        <div class="feature-icon">📊</div>
+        <div class="feature-title">Track Spreadsheet Updates</div>
+        <div class="feature-desc">Monitor specific cells, rows, or entire Google Sheets for live data changes. Never miss a critical update.</div>
+      </div>
+      <div class="feature">
+        <div class="feature-icon">⚡️</div>
+        <div class="feature-title">Instant Alerts to Your Team</div>
+        <div class="feature-desc">Send customizable notifications directly to Slack or Teams channels. Instantly alert your team the moment data changes!</div>
+      </div>
+      <div class="feature">
+        <div class="feature-icon">🛠️</div>
+        <div class="feature-title">No-Code Integration</div>
+        <div class="feature-desc">Connect Google Sheets to your favorite chat apps in minutes. No technical setup or coding required.</div>
+      </div>
+    </div>
+  </section>
+  <section class="section">
+    <h2>Use Cases</h2>
+    <ul style="text-align:left; display:inline-block;">
+      <li>Inventory and stock level monitoring</li>
+      <li>Budget and expense tracking</li>
+      <li>Project status and task updates</li>
+      <li>Collaborative data review</li>
+    </ul>
+  </section>
+</body>
+</html>
