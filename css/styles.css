@@ -10971,3 +10971,8 @@ footer.footer {
 .dropdown-menu a:hover {
   background-color: #f2f2f2;
 }
+
+.logo {
+  width: 140px;   /* Adjust to your estimated width */
+  height: auto;   /* Keeps the aspect ratio */
+}
