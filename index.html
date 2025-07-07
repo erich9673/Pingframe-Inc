@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -46,73 +47,241 @@
       background: #f4f5f7;
       color: #0052cc;
     }
-    .products-dropdown {
-      position: relative;
-      display: inline-block;
-    }
-    .products-btn {
-      background: none;
+    .cta-btn {
+      background: linear-gradient(90deg, #0052cc 0%, #2684ff 100%);
+      color: #fff;
       border: none;
-      font: inherit;
+      border-radius: 6px;
+      padding: 10px 22px;
+      font-size: 1rem;
       font-weight: 600;
-      color: #253858;
-      padding: 8px 12px;
-      border-radius: 4px;
-      cursor:
+      margin-left: 16px;
+      text-decoration: none;
+      box-shadow: 0 2px 8px rgba(38,132,255,0.07);
+      transition: background 0.2s;
+    }
+    .cta-btn:hover {
+      background: linear-gradient(90deg, #0747a6 0%, #0052cc 100%);
+    }
+
+    /* HERO SECTION */
+    .hero {
+      background: linear-gradient(90deg, #2684ff 0%, #0052cc 100%);
+      color: #fff;
+      padding: 90px 0 70px 0;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero h1 {
+      font-size: 2.7rem;
+      font-weight: 700;
+      margin-bottom: 22px;
+      line-height: 1.15;
+    }
+    .hero p {
+      font-size: 1.25rem;
+      margin-bottom: 38px;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .hero-cta {
+      background: #fff;
+      color: #0052cc;
+      font-weight: 600;
+      border-radius: 6px;
+      padding: 12px 30px;
+      text-decoration: none;
+      font-size: 1.1rem;
+      box-shadow: 0 2px 8px rgba(38,132,255,0.13);
+      transition: background 0.2s, color 0.2s;
+    }
+    .hero-cta:hover {
+      background: #e6f0ff;
+      color: #0747a6;
+    }
+    .hero-img {
+      margin-top: 40px;
+      max-width: 340px;
+      width: 90vw;
+      border-radius: 18px;
+      box-shadow: 0 8px 32px rgba(9,30,66,0.13);
+    }
+
+    /* FEATURES */
+    .section {
+      padding: 70px 0 50px 0;
+      background: #fff;
+      text-align: center;
+    }
+    .section.alt {
+      background: #f4f8fb;
+    }
+    .features-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 40px;
+      margin-top: 38px;
+    }
+    .feature {
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 2px 8px rgba(9,30,66,0.06);
+      padding: 30px 24px;
+      max-width: 320px;
+      text-align: left;
+      flex: 1 1 280px;
+    }
+    .feature-icon {
+      font-size: 2.6rem;
+      margin-bottom: 18px;
+      color: #0052cc;
+    }
+    .feature-title {
+      font-size: 1.2rem;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+    .feature-desc {
+      font-size: 1rem;
+      color: #42526e;
+    }
+
+    /* TRUSTED BY */
+    .trusted {
+      padding: 30px 0 10px 0;
+      background: #fff;
+      text-align: center;
+    }
+    .trusted-logos {
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      margin-top: 16px;
+      flex-wrap: wrap;
+    }
+    .trusted-logos img {
+      height: 36px;
+      opacity: 0.7;
+    }
+
+    /* FOOTER */
+    footer {
+      background: #091e42;
+      color: #fff;
+      padding: 40px 0 20px 0;
+    }
+    .footer-content {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 50px;
+      max-width: 1100px;
+      margin: 0 auto 30px auto;
+    }
+    .footer-col {
+      min-width: 180px;
+    }
+    .footer-col h4 {
+      font-size: 1.05rem;
+      font-weight: 700;
+      margin-bottom: 18px;
+    }
+    .footer-col a {
+      color: #b3bac5;
+      text-decoration: none;
+      display: block;
+      margin-bottom: 10px;
+      font-size: 0.98rem;
+      transition: color 0.2s;
+    }
+    .footer-col a:hover {
+      color: #fff;
+    }
+    .footer-bottom {
+      text-align: center;
+      color: #b3bac5;
+      font-size: 0.95rem;
+    }
+    @media (max-width: 900px) {
+      .features-grid {
+        flex-direction: column;
+        align-items: center;
+      }
+      .footer-content {
+        flex-direction: column;
+        align-items: center;
+        gap: 28px;
+      }
+    }
+  </style>
 </head>
 <body>
+  <!-- NAVIGATION -->
   <nav class="navbar">
     <img src="assets/img/GPT3.png" alt="PingFrame Logo" class="logo" />
     <div class="nav-menu">
-      <div class="products-dropdown">
-        <button class="products-btn">Products</button>
-        <div class="dropdown-content">
-          <div class="dropdown-item">
-            <strong>PingFrame Sheets</strong><br>
-            <small>Sheets Connector: Instantly sync and monitor Google Sheets data in real-time.</small>
-          </div>
-          <div class="dropdown-item">
-            <strong>PingFrame Analytics</strong><br>
-            <small>Analytics Alert: Get timely notifications from Google Analytics data changes.</small>
-          </div>
-        </div>
-      </div>
-      <a href="#" class="nav-link">About Us</a>
+      <a href="#" class="nav-link">Products</a>
+      <a href="#" class="nav-link">Solutions</a>
       <a href="#" class="nav-link">Resources</a>
       <a href="#" class="nav-link">Pricing</a>
     </div>
+    <div>
+      <a href="https://docs.google.com/forms/d/e/1FAIpQLSdWczLkiWUv1JCdNLImhXUbEo6lkWClddcbidI-K-5qIpGz9g/viewform?usp=preview" class="cta-btn">Join the Beta</a>
+    </div>
   </nav>
+
+  <!-- HERO SECTION -->
   <section class="hero">
     <h1>Get Notified When It Matters</h1>
-    <p>
-      PingFrame connects apps like Google Sheets and Google Analytics to Slack or Microsoft Teams — so your team gets real-time alerts the moment data changes.
-    </p>
-    <a href="#" class="hero-cta">Try Now For Free</a>
-    <div><img src="assets/img/GPT1.png" alt="PingFrame Example" class="hero-img" /></div>
+    <p>Connect Google Sheets and Analytics to Slack or Teams. Instantly alert your team the moment data changes — without writing a single line of code.</p>
+    <a href="https://docs.google.com/forms/d/e/1FAIpQLSdWczLkiWUv1JCdNLImhXUbEo6lkWClddcbidI-K-5qIpGz9g/viewform?usp=preview" class="hero-cta">Request Access</a>
+    <div>
+      <img src="assets/img/GPT1.png" alt="PingFrame Example" class="hero-img" />
+    </div>
   </section>
-  <section class="section alt">
-    <p style="font-size:1.25rem;font-weight:600;">Instantly alert your team the moment data changes!</p>
-  </section>
+
+  <!-- FEATURES -->
   <section class="section">
-    <h2 class="feature-title">How PingFrame Works</h2>
+    <h2>How PingFrame Works</h2>
     <div class="features-grid">
       <div class="feature">
         <div class="feature-icon">📊</div>
         <div class="feature-title">Track Updates</div>
-        <div>Monitor cells, rows, or whole sheets for key changes in real time.</div>
+        <div class="feature-desc">Monitor key cells, rows, or entire spreadsheets for important changes in real time.</div>
       </div>
       <div class="feature">
         <div class="feature-icon">⚡️</div>
         <div class="feature-title">Instant Alerts</div>
-        <div>Red notifications for critical events; green for info and success.</div>
+        <div class="feature-desc">Send customizable notifications directly to Slack or Teams channels.</div>
       </div>
       <div class="feature">
         <div class="feature-icon">🛠️</div>
         <div class="feature-title">No-Code Setup</div>
-        <div>Connect Google Sheets, Slack, or Teams — zero coding needed.</div>
+        <div class="feature-desc">Connect with Google Sheets — no coding or technical setup required.</div>
       </div>
     </div>
   </section>
+
+  <!-- TRUSTED BY -->
+  <section class="trusted alt">
+    <div>Trusted by teams at</div>
+    <div class="trusted-logos">
+      <img src="assets/img/logo1.png" alt="Company 1"/>
+      <img src="assets/img/logo2.png" alt="Company 2"/>
+      <!-- Add more logos as needed -->
+    </div>
+  </section>
+
+  <!-- BENEFITS SECTION -->
+  <section class="section alt">
+    <h2>Built for Fast-Moving Teams</h2>
+    <p>Stop constantly checking spreadsheets. Stay on top of inventory, budgets, or project statuses — PingFrame keeps your team in the loop, automatically.</p>
+  </section>
+
+  <!-- FOOTER -->
   <footer>
     <div class="footer-content">
       <div class="footer-col">
@@ -137,7 +306,9 @@
         <a href="#">Twitter</a>
       </div>
     </div>
-    <div class="footer-bottom">© 2025 PingFrame, Inc.</div>
+    <div class="footer-bottom">
+      © 2025 PingFrame, Inc.
+    </div>
   </footer>
 </body>
 </html>
