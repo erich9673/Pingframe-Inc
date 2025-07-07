@@ -10973,6 +10973,6 @@ footer.footer {
 }
 
 .logo {
-  width: 140px;   /* Adjust to your estimated width */
-  height: auto;   /* Keeps the aspect ratio */
+  width: auto;  
+  height: auto; 
 }
